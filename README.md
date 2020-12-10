@@ -22,6 +22,8 @@ Prerequisites:
 
 - In the folder of choice, ensure regions match where appropriate and tweak the resources and versions to suit.
 
+- Configure az account to set subscription you want to deploy resources to: `az account set --subscription "<Subscription_Name>"`
+
 - Initialize the directory: `terraform init`
 
 - As good practice, validate the configuration files to ensure there are no syntactical errors, etc: `terraform validate`
