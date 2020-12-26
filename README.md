@@ -35,3 +35,22 @@ Prerequisites:
 - Apply after any issues with the plan are resolved: `terraform apply` (type `yes` to approve, if you're confident and **NOT IN A PRODUCTION ENVIRONMENT** add the flag `--auto-approve` after apply)
 
 - Once the CLI indicates the resources are created, access Azure to view and use the applications where appropriate.
+
+## Visualising Dependencies:
+A growth in complexity is inevitable with application(s) and organisational growth.
+To help understand this, Terraform has a nifty functionality to help visualise infrastructure dependencies, the graph command.
+By doing so, Terraform will analyse the desired state (the infrastructure specified in your .tf configuration files) and export the analysed resources and their dependencies into a dot file. This can be done by using:
+
+```shell
+terraform graph > filename.dot
+```
+
+This dot file can then be reformatted into a more displayable form, alternatively, using a tool such as Graphviz, available at https://graphviz.org/download/. You can skip this step and use terraform graph to output to a format such as svg. Make sure plugins are enabled by running the following command with admin privileges:
+```shell
+dot -c
+```
+Next, you can run Terraform graph and pipe the output to the format of your choice (Assuming it's supported by Graphviz), for example:
+```shell
+terraform graph | dot -Tsvg > graph.svg
+```
+Make sure to specify the image format immediately after the -T flag.
