@@ -1,7 +1,7 @@
 /* 
 This tf file exists to provision an Azure Resource group and an Azure Kubernetes Service Cluster 
 */
-resource "random_pet" "prefix" {}
+resource "random_pet" "prefix" {} #generates a random prefix for resource naming, take out at convenience
 #specify azure terraform provider and any additional configurations
 provider "azurerm" {
   version = "~> 2.0"
@@ -10,13 +10,13 @@ provider "azurerm" {
 #create azure resource group
 resource "azurerm_resource_group" "AKS_Demo" {
   name     = "${random_pet.prefix.id}-rg"
-  location = "West US 2"
+  location = var.location
 
   tags = {
     environment = "Demo"
   }
 }
-
+#Create the AKS Cluster
 resource "azurerm_kubernetes_cluster" "AKS_Demo" {
   name                = "${random_pet.prefix.id}-aks"
   location            = azurerm_resource_group.default.location

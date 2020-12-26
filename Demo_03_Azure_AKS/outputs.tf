@@ -1,3 +1,4 @@
+#This tf file exists to display all the output information needed to configure kubectl to interact with the AKS cluster being created
 output "resource_group_name" {
   value = azurerm_resource_group.AKS_Demo.name
 }
