@@ -19,8 +19,8 @@ resource "azurerm_resource_group" "AKS_Demo" {
 #Create the AKS Cluster
 resource "azurerm_kubernetes_cluster" "AKS_Demo" {
   name                = "${random_pet.prefix.id}-aks"
-  location            = azurerm_resource_group.default.location
-  resource_group_name = azurerm_resource_group.default.name
+  location            = azurerm_resource_group.AKS_Demo.location
+  resource_group_name = azurerm_resource_group.AKS_Demo.name
   dns_prefix          = "${random_pet.prefix.id}-k8s"
 
   default_node_pool {
