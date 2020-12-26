@@ -98,3 +98,11 @@ Press CTRL+C to close the tunnel...
 ```
 
  You should be able to access the Kubernetes dashboard at [http://127.0.0.1:8001/](http://127.0.0.1:8001/).
+
+```
+## NOTE
+
+Once done, say if you were running this code for local testing, delete the service principal from Azure using:
+```shell
+az ad sp delete --id <INSERT ID HERE>
+```

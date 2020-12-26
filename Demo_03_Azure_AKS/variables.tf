@@ -8,4 +8,5 @@ variable "password" {
 
 variable "location" {
   default = "uksouth"
+  description = "Location for resources to be deployed to"
 }
