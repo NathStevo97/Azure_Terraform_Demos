@@ -1,3 +1,3 @@
 #Update these after creating the service principal in Azure using the commands in the Readme
-appId    = "51e9a668-74d3-45f2-ba96-696db963cf70"
-password = "HeUUfE0_yU62E2vKk_t4~UXd_Z-ufnLrFe"
+appId    = "798f336f-85d1-46dc-931f-11be1a7d8cf6"
+password = "4jzgWQ3WR~HIiEUoDu6P4-h_x9Za88e7TY"

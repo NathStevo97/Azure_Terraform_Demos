@@ -112,3 +112,11 @@ az ad sp delete --id <INSERT ID HERE>
 ```
 
 respectively.
+
+If there's any issues with deleting the Kubernetes resources e.g. pods, just do it manually by removing them from the state file:
+
+```shell
+terraform state list
+
+terraform state rm <resource id>
+```
