@@ -30,6 +30,13 @@ resource "azurerm_kubernetes_cluster" "AKS_Demo" {
     os_disk_size_gb = 30
   }
 
+  linux_profile {
+    admin_username = "ubuntu"
+    ssh_key {
+      key_data = file(var.ssh_public_key)
+    }
+  }
+
   service_principal {
     client_id     = var.appId
     client_secret = var.password
